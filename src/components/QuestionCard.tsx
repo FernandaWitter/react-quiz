@@ -38,4 +38,3 @@ const QuestionCard: React.FC<Props> = ({
 );
 
 export default QuestionCard;
-//trying again
