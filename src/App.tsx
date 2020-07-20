@@ -3,6 +3,8 @@ import "./styles.css";
 import { fetchQuizQuestions, Difficulty, QuestionsState } from "./API";
 //Components
 import QuestionCard from "./components/QuestionCard";
+//Styles
+import { GlobalStyle, Wrapper } from "./App.styles" 
 
 export type AnswerObject = {
   question: string;
@@ -49,12 +51,12 @@ const App = () => {
       if (correct) setScore(prev => prev + 1);
       //Save answer in the array for user answers
       const answerObject = {
-        question: questions[number],
+        question: questions[number].question,
         answer,
         correct,
         correctAnswer: questions[number].correct_answer
       };
-      setUserAnswers(prev => [...prev, answerObject]);
+      setUserAnswers((prev) => [...prev, answerObject]);
     }
   };
 
@@ -69,7 +71,9 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <>
+    <GlobalStyle />
+    <Wrapper className="App">
       <h1>REACT QUIZ</h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
         <button className="start" onClick={startTrivia}>
@@ -96,7 +100,8 @@ const App = () => {
           Next Question
         </button>
       ) : null}
-    </div>
+    </Wrapper>
+    </>
   );
 };
 

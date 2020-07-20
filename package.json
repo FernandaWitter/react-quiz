@@ -8,12 +8,15 @@
   ],
   "main": "src/index.js",
   "dependencies": {
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-scripts": "3.0.1",
     "styled-components": "5.1.1"
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.1",
     "typescript": "3.8.3"
   },
   "scripts": {
